@@ -1,0 +1,10 @@
+.imprimirQr{
+    display:flex;background-color:white;width:auto;align-items: center;
+}
+.imprimirQr img{
+    width: 150px;
+    height: 150px;
+}
+.infoRuta{
+    color:black;margin-left:40px;font-weight:bold;display:flex;justify-content:center;flex-direction: column;
+}

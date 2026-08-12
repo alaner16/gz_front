@@ -1,0 +1,5 @@
+screen_number - screen_number_lr = total_screen_number
+input_read - input_read_lr = total_input_read
+output_read - output_read_lr = total_output_read
+total_input_read - total_output_read = total_markers
+game_machine_output - total_markers = missing

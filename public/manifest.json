@@ -1,0 +1,36 @@
+{
+  "name": "Gamezone",
+  "short_name": "Gamezone",
+  "theme_color": "#e67b17",
+  "orientation": "portraint",
+  "description": "Aplicación para ruteros, herramienta para tomar cortes, premios y visitas.",
+  "lang": "es-MX",
+  "prefer_related_applications": true,
+  "icons": [
+    {
+      "src": "./img/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icons/android-chrome-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./img/icons/android-chrome-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000"
+}
