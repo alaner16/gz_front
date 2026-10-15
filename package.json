@@ -7,7 +7,7 @@
     "subir-mejora": "npm version minor && npm run build && firebase deploy --only hosting",
     "subir-pro": "npm version major && npm run build && firebase deploy --only hosting",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "node --openssl-legacy-provider ./node_modules/@vue/cli-service/bin/vue-cli-service.js build",
     "lint": "vue-cli-service lint",
     "cordova-build-android": "cross-env CORDOVA_PLATFORM=android vue-cli-service cordova-build-android",
     "cordova-build-browser": "cross-env CORDOVA_PLATFORM=browser vue-cli-service cordova-build-browser",
