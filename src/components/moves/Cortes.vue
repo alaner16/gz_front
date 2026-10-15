@@ -251,8 +251,11 @@ export default {
       (v) => /^\d*[.]?\d*$/.test(v) || "Solo se aceptan numeros.",
     ],
     reglaImg: [
-      (value) =>
-        value.size < 18000000 || "El limite de tamaño de imagen es de 18 MB!",
+      (value) => {
+        if (!value)
+          return "Es necesario ingresar la imagen";
+        return value.size < 18000000 || "El limite de tamaño de imagen es de 18 MB!";
+      }
     ],
     pagina: 0,
     sincronizando: false,

@@ -253,11 +253,34 @@ export default {
   async created(){
     this.initialize()
   },
+  mounted(){
+    this.handleOnline = () => this.evaluarAutoSincronizacion()
+    this.handleOffline = () => this.evaluarAutoSincronizacion()
+
+    window.addEventListener('online', this.handleOnline)
+    window.addEventListener('offline', this.handleOffline)
+    this.evaluarAutoSincronizacion()
+  },
+  beforeDestroy(){
+    window.removeEventListener('online', this.handleOnline)
+    window.removeEventListener('offline', this.handleOffline)
+  },
   methods: {
     async initialize(){
       this.pendingToUpload = await idb.get('sales')
       this.salesSincronized = await idb.get('salesUploaded')
       this.ordenar()
+      this.evaluarAutoSincronizacion()
+    },
+    estaEnLinea(){
+      return typeof navigator !== 'undefined' ? navigator.onLine : true
+    },
+    async evaluarAutoSincronizacion(){
+      if (this.sincronizando || this.pendingToUpload.length < 5 || !this.estaEnLinea()) {
+        return
+      }
+
+      await this.sincronizar()
     },
     async eliminarMovimiento(id, idImg){
       await idb.delete(id, 'sales', false)
